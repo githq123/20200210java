@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+   "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+<!-- 
+	<constant name="常量名" value="常量的值"></constant>
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	
+	<include file="struts-part1.xml"></include>
+-->	
+	<!-- 设置用户界面主题，默认值为xhtml风格
+    <constant name="struts.ui.theme" value="simple"></constant>
+	 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+		
+	<!-- 定义restaurant包， 继承Struts 2的默认包  -->
+	<package name="restaurant" namespace="/" extends="struts-default">	 
+	   <!-- 10.1小节自定义拦截器 -->
+	    <interceptors>
+			<interceptor name="myInterceptor" class="com.restaurant.interceptor.MyInterceptor"/>
+			
+			<interceptor name="myAuthorization" class="com.restaurant.interceptor.AuthorityInterceptor"/>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="myAuthorization"></interceptor-ref>
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		
+	 	<!-- 7.4.1 全局Result配置 
+	 	<global-results>
+	 		<result name="success">/ch07/success1.jsp</result>
+	 	</global-results>
+	 		-->
+	 	<global-results>
+	 		<result name="login">/ch010/login.jsp</result>
+	 	</global-results>
+	
+	 	<!-- 7.3.3  -->
+		<global-allowed-methods>regex:.*</global-allowed-methods>	
+		
+
+		<action name="login" class="com.restaurant.action.LoginAction">
+			<result name="success">/ch06/index.jsp</result>
+			<result name="input">/ch06/login.jsp</result>
+		</action>
+		
+		<!-- Struts 2访问Servlet API示例的配置 -->
+	    <action name="messageAction" class="com.restaurant.action.MessageAction">
+			<result name="success">/ch07/success.jsp</result>
+			<result name="error">/ch07/error.jsp</result>
+		</action>		
+		
+		<!-- 7.3.3 动态调用配置  -->
+        <action name="lrAction" class="com.restaurant.action.LRAction">
+			<result name="success">/ch07/success1.jsp</result>
+			<result name="error">/ch07/error1.jsp</result>
+			<result name="register">/ch07/register1.jsp</result>
+		</action>		
+		
+		<!-- 7.3.4  使用method属性处理调用方法的配置 -->
+	<!-- 
+	    <action name="loginAction" class="com.restaurant.action.LRAction" method="login">
+			<result name="success">/ch07/success1.jsp</result>
+			<result name="error">/ch07/error1.jsp</result>
+		</action>	
+		<action name="registerAction" class="com.restaurant.action.LRAction" method="register">
+			<result name="register">/ch07/register1.jsp</result>
+		</action>
+	 -->
+ 
+	 	<!-- 7.3.5 使用通配符配置  -->
+        <action name="*Action" class="com.restaurant.action.LRAction" method="{1}">
+		<!-- 7.4.1   
+		    <result name="success" type="dispatcher">
+				<param name="location">/ch07/success1.jsp</param>	
+			</result>
+		 -->
+		 <!-- 7.4.2 结果类型 -->		
+			<result name="success" type="dispatcher">/ch07/success1.jsp	</result>  
+			<result name="error" type="redirect">/ch07/{1}1.jsp</result>
+			<result name="register">/ch07/{1}1.jsp</result>
+		</action>
+
+		<!-- 修改第6章的登录程序   1.先修改登录页面中的action请求，改为"Login_login"。
+							   2.修改LoginAction中的"execute"方法名改为"login"。   -->
+		<action name="*_*" class="com.restaurant.action.{1}Action" method="{2}">
+			<result name="success">/ch06/index.jsp</result>
+			<result name="input">/ch06/{2}.jsp</result>
+		</action>		
+		
+		<!-- 7.4.4 -->
+		<action name="pageAction" class="com.restaurant.action.PageAction">
+			<result name="success">/ch07/${pageName}.jsp</result>
+		</action>
+		
+		<!-- 8.2.5 非表单标签 -->		
+		<action name="errorAction" class="com.restaurant.action.ErrorAction">
+			<result name="success">/ch08/showErrorAction.jsp</result>
+		</action>	
+		
+		<!-- 8.4小节注册示例 -->
+		<action name="register" class="com.restaurant.action.RegisterAction">
+			<result name="success">/ch08/register_success.jsp</result>
+			<result name="input">/ch08/register.jsp</result>
+		</action>	
+		
+		<!-- 9.2小节自定义类型转换器 -->
+		<action name="reg" class="com.restaurant.action.RegAction">
+			<result name="success">/ch09/success.jsp</result>
+			<result name="input">/ch09/reg.jsp</result>
+		</action>	
+		
+   		<!-- 10.1小节自定义拦截器 -->
+		<action name="my" class="com.restaurant.action.MyAction">
+			<result name="success">/ch10/my.jsp</result>
+			<interceptor-ref name="myInterceptor"/>
+		</action>
+		
+		<!-- 10.3小节自定义拦截器 -->
+		<action name="logAction" class="com.restaurant.action.LogAction">
+			<result name="success">/ch10/main.jsp</result>
+			<result name="login">/ch10/login.jsp</result>
+		</action>
+		<action name="show" class="com.restaurant.action.ShowAction">
+			<result name="success">/ch10/main.jsp</result>
+
+		    <interceptor-ref name="myStack"></interceptor-ref>
+		</action>
+		
+	</package>	
+</struts>

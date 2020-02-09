@@ -1,0 +1,50 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jQuery实现页面详情展开收起</title>
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+<script>
+// 显隐项目介绍详情
+	$(function view_details_click(){
+		$("#detailmain_a").bind('click',function(){
+			if($("#deal_info_box").is(":hidden")){
+				$("#deal_info_box").show();
+				$(this).find("#view_details").text("收起详情");
+				$(this).find(".fa").removeClass("fa-angle-right").addClass("fa-angle-down");
+			}
+			else{
+				$("#deal_info_box").hide();
+				$(this).find("#view_details").text("展开详情");
+				$(this).find(".fa").removeClass("fa-angle-down").addClass("fa-angle-right");
+			}
+		});
+		$("#detailmain_aa").bind('click',function(){
+			$("#deal_info_box").hide();
+			$("#view_details").text("展开详情");
+		});
+	});
+</script>
+
+<link href="EasyUI/themes/default/easyui.css"  rel="stylesheet" type="text/css"/>
+<link href="EasyUI/themes/icon.css" rel="stylesheet" type="text/css"/>
+<link href="EasyUI/demo.css" rel="stylesheet" type="text/css"/>
+<script src="EasyUI/jquery.min.js" type="text/javascript"></script>
+<script src="EasyUI/jquery.easyui.min.js" type="text/javascript"></script>
+<script src="EasyUI/easyui-lang-zh_CN.js" type="text/javascript"></script>
+</head>
+<body>
+	<a class="detailmain_a" href="javascript:void(0);" id="detailmain_a">
+		<span id="view_details">展开详情></span><i class="fa fa-angle-right"></i>
+	</a>
+	<div class="deal_info_box pb15" id="deal_info_box" style="display:none">
+	<!-- 此处引入要展开的具体文件内容 -->
+		<div class="easyui-tabs" style="width:700px;height:250px">
+<div title="Orders" style="padding:10px">页面一</div>
+<div title="Contact Information" style="padding:10px">页面二</div>
+</div>
+	</div>
+</body>
+</html>

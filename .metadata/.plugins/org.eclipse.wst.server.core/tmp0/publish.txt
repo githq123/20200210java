@@ -1,0 +1,6 @@
+#Tomcat publish data
+#Sat Feb 01 14:34:08 CST 2020
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\admin\\eclipse-workspace\\test4\\WebContent\\WEB-INF\\lib\\spring-web-4.3.5.RELEASE.jar=C\:\\Program Files\\Apache Software Foundation\\Tomcat 8.5_Tomcat8.5\\wtpwebapps\\test4\\WEB-INF\\lib\\spring-web-4.3.5.RELEASE.jar
+org.eclipse.jst.jee.server\:test4=C\:\\Program Files\\Apache Software Foundation\\Tomcat 8.5_Tomcat8.5\\wtpwebapps\\test4
+org.eclipse.jst.jee.server\:123435=C\:\\Program Files\\Apache Software Foundation\\Tomcat 8.5_Tomcat8.5\\wtpwebapps\\123435
+org.eclipse.jst.jee.server\:21(1)=C\:\\Program Files\\Apache Software Foundation\\Tomcat 8.5_Tomcat8.5\\wtpwebapps\\21(1)

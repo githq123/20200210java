@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;MyServlet.java&apos; to &apos;LearnServlet/src/(default package)&apos;&#x0D;&#x0A;- Original project: &apos;123435&apos;&#x0D;&#x0A;- Destination element: &apos;LearnServlet/src/(default package)&apos;&#x0D;&#x0A;- Original element: &apos;MyServlet.java&apos;" description="Copy compilation unit" destination="=LearnServlet/src&lt;" element1="/src&lt;{MyServlet.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1542182560336" units="1" version="1.0"/>
+</session>

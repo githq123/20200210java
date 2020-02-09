@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\admin\Desktop\jk12_page"/>
+		<item value="C:\Users\admin\AppData\Roaming\feiq\Recv Files\jk12_page"/>
+		<item value="C:\Users\admin\AppData\Roaming\feiq\Recv Files\上午-day03\jk12_register"/>
+		<item value="C:\Users\admin\eclipse-workspace\jk12_page"/>
+		<item value="C:\Users\admin\eclipse-workspace\jk12_json"/>
+		<item value="C:\Users\admin\eclipse-workspace\jk12_register"/>
+		<item value="C:\Users\admin\eclipse-workspace\jk12_dbutils"/>
+		<item value="C:\Users\admin\eclipse-workspace\jk12_commonsdbutils"/>
+		<item value="C:\Users\admin\eclipse-workspace\jk12_pool"/>
+		<item value="C:\Users\admin\eclipse-workspace\jk12_c3p0"/>
+		<item value="C:\Users\admin\eclipse-workspace\jk12_AJAX1"/>
+		<item value="C:\Users\admin\eclipse-workspace\jk12_AJAX"/>
+	</list>
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\admin\eclipse-workspace\restaurant1"/>
+			<item value="C:\Users\admin\eclipse-workspace\restaurant"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.ui.wizards.new.project" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.emf.codegen.ecore.ui.wizardCategory"/>
+			<item value="org.eclipse.jst.ejb.ui"/>
+			<item value="org.eclipse.buildship.ui.creationwizards"/>
+			<item value="org.eclipse.jdt.ui.java"/>
+			<item value="org.eclipse.jst.j2ee.internal"/>
+			<item value="org.eclipse.wst.jsdt.ui.java"/>
+			<item value="org.eclipse.jpt.jaxb"/>
+			<item value="org.eclipse.jpt.jpa"/>
+			<item value="org.eclipse.m2e"/>
+			<item value="org.eclipse.pde.PDE"/>
+			<item value="org.eclipse.wst.web.ui"/>
+			<item value="org.eclipse.ui.Examples"/>
+		</list>
+	</section>
+	<section name="BasicNewProjectResourceWizard">
+	</section>
+</section>

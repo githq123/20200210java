@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript中使用json</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/* function User(id,username,password,sex,age){
+		 this.id=id;
+		 this.username=username;
+		 this.password=password;
+		 this.sex=sex;
+		 this.age=age;
+		 }
+		 var user=new User(1,"张三","123456","男",19);
+		 document.write(user.id+":"+user.username+":"+user.password+":"+user.sex+":"+user.age+"<br>");
+		 */
+
+		/* var user = {
+			"age" : 18,
+			"id" : 1,
+			"password" : "123456",
+			"sex" : "男",
+			"username" : "张三"
+		};
+		document.write(user.id+":"+user.username+":"+user.password+":"+user.sex+":"+user.age+"<br>");
+		 */	
+		 
+		//前后端分离，重点是AJAX，请求网络返回的一定是String（字符串）（文本）。
+		var str="{\"age\":17,\"id\":1,\"password\":\"123456\",\"sex\":\"男\",\"username\":\"张三\"}";
+		//JavaScript中解析Json字符串
+		var user=JSON.parse(str);
+		document.write(user.id+":"+user.username+":"+user.password+":"+user.sex+":"+user.age+"<br>");
+		
+		//数组类型的解析
+		var str1="[{\"age\":17,\"id\":4,\"password\":\"123456\",\"sex\":\"男\",\"username\":\"张三\"},{\"age\":17,\"id\":5,\"password\":\"123456\",\"sex\":\"男\",\"username\":\"张三\"}]"
+		var users=JSON.parse(str1);
+		for (var i = 0; i < users.length; i++) {
+			document.write(users[i].id+":"+users[i].username+":"+users[i].password+":"+users[i].sex+":"+users[i].age+"<br>");
+			
+		}
+		
+		//混合类型的解析
+		var str2="{\"id\":98,\"name\":\"管理员\",\"user\":{\"age\":18,\"id\":1,\"password\":\"123456\",\"sex\":\"男\",\"username\":\"张三\"},\"users\":[{\"age\":18,\"id\":1,\"password\":\"123456\",\"sex\":\"男\",\"username\":\"张三\"},{\"age\":19,\"id\":2,\"password\":\"666666\",\"sex\":\"女\",\"username\":\"李四\"}]}";
+		var object=JSON.parse(str2);
+		
+		document.write(object.id+"<br>");
+		document.write(object.user.password+"<br>");
+		document.write(object.users[1].sex+"<br>");
+		
+		</script>
+
+</body>
+</html>
